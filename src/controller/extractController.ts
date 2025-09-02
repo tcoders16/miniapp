@@ -3,7 +3,7 @@ import { ExtractBody } from "../schemas/extract.schema";
 import { sendOk, sendErr } from "../lib/http";
 
 import type { Request, Response } from "express";
-import { extractRules } from "../services/extractRules";
+import { extractSmart } from "../services/smartEventExtractorSelector";
 
 
 
@@ -23,7 +23,7 @@ export async function postExtract(req: Request, res: Response) {
   }
 
   try {
-    const data = await extractRules(parsed.data);
+    const data = await extractSmart(parsed.data);
     return sendOk(res, data);
   } catch (e: any) {
     return sendErr(res, "E_EXTRACT", e?.message ?? "Extraction failed", undefined, 500);
