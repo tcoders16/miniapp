@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "ts-node src/server.ts",
-    "build": "tsc -p .",
-    "start": "node dist/server.js"
+    "dev": "node init && ts-node src/server.ts",
+    "build": "node init && tsc -p .",
+    "start": "node init && node dist/server.js"
   },
   "repository": {
     "type": "git",

@@ -10,8 +10,8 @@
 // =============================
 
 import { z } from "zod";
-import type { ExtractionResult, EventLite } from "../types/events";
-import { ollamaGenerateJSON } from "../clients/ollama";
+import type { ExtractionResult, EventLite } from "../../types/events";
+import { ollamaGenerateJSON } from "../../clients/ollama";
 
 // -------- JSON schema guard (Zod) --------
 const LlmEvent = z.object({
