@@ -1,20 +1,14 @@
 // src/routes/extract.ts
 import { Router } from "express";
-import { z } from "zod";
-import { extractDeadlines } from "../services/extractService";
+import { postExtract } from "../controller/extractController";
 
+// Create an isolated router for all /api/extract endpoints
 export const router = Router();
 
-const InputSchema = z.object({
-  texts: z.array(z.string().min(1)),
-  nowISO: z.string().optional()
-});
-
-router.post("/", (req, res) => {
-  const parsed = InputSchema.safeParse(req.body);
-  if (!parsed.success) return res.status(400).json({ error: parsed.error.format() });
-
-  const { texts, nowISO } = parsed.data;
-  const items = extractDeadlines(texts, nowISO ? new Date(nowISO) : undefined);
-  res.json({ items });
-});
+/**
+ * POST /api/extract
+ * - Validates the body with Zod (inside the controller)
+ * - Delegates to the service (rules/LLM depending on your controller)
+ * - Responds with { ok, data } or { ok:false, error }
+ */
+router.post("/", postExtract);
