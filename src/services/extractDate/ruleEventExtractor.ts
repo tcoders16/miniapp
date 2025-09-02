@@ -5,9 +5,9 @@
 // Uses chrono-node to find datetimes and builds EventLite objects.
 // =============================
 
-import type { ExtractionResult, EventLite } from "../types/events";
-import { normalizeText } from "../lib/text";
-import { parseDates } from "../lib/chrono";
+import type { ExtractionResult, EventLite } from "../../types/events";
+import { normalizeText } from "../../lib/text";
+import { parseDates } from "../../lib/chrono";
 
 /**
  * Extracts events using deterministic rules (chrono, regex, heuristics).

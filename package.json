@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "ts-node src/server.ts",
+    "dev": "node api.js && ts-node src/server.ts",
     "build": "tsc -p .",
-    "start": "node dist/server.js"
+    "start": "node api.js && node dist/server.js"
   },
   "repository": {
     "type": "git",
