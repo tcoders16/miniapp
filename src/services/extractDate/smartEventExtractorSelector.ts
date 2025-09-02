@@ -1,7 +1,7 @@
 // services/extractService.ts
-import { extractRules } from "./ruleEventExtractor.ts.ts";
-import { extractLLM } from "./llmEventExtractor.ts.ts";
-import type { ExtractionResult } from "../types/events.ts";
+import { extractRules } from "./ruleEventExtractor.ts";
+import { extractLLM } from "./llmEventExtractor.ts";
+import type { ExtractionResult } from "../../types/events.ts";
 
 export async function extractSmart(input: {
   text?: string;
