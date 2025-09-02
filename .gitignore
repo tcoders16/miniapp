@@ -6,10 +6,9 @@ dist/
 build/
 
 # Environment files
-.env
-.env.*
 
 # OS / Editor
 .DS_Store
 .vscode/
 .idea/
+config.bat
