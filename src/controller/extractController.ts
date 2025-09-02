@@ -3,19 +3,10 @@ import { ExtractBody } from "../schemas/extract.schema";
 import { sendOk, sendErr } from "../lib/http";
 
 import type { Request, Response } from "express";
-import { extractSmart } from "../services/smartEventExtractorSelector";
-
-
-
-
-
+import { extractSmart } from "../services/extractDate/smartEventExtractorSelector";
 
 //post extract
 export async function postExtract(req: Request, res: Response) {
-
-
-
-
 
   const parsed = ExtractBody.safeParse(req.body);
   if (!parsed.success) {
